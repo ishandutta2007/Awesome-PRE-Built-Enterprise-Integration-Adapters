@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19" />
+      <stop offset="45%" stop-color="#0b1736" />
+      <stop offset="100%" stop-color="#0d1b2a" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glass Card Style -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      fill: #ffffff;
+      font-size: 42px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      fill: #94a3b8;
+      font-size: 19px;
+      letter-spacing: 0.2px;
+    }
+    .badge-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      fill: #38bdf8;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .pill-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      fill: #e2e8f0;
+      font-size: 14px;
+    }
+    .code-text {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 12px;
+      fill: #38bdf8;
+    }
+
+    /* Pulse & Float Animations */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.75; transform: scale(1.08); }
+    }
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-12px) translateX(8px); }
+    }
+    @keyframes nodeFloat1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes nodeFloat2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(8px); }
+    }
+
+    .anim-dash {
+      stroke-dasharray: 8 12;
+      animation: dashMove 14s linear infinite;
+    }
+    .anim-dash-fast {
+      stroke-dasharray: 6 10;
+      animation: dashMove 8s linear infinite;
+    }
+    .pulse-blob-1 {
+      animation: pulseGlow 6s ease-in-out infinite;
+      transform-origin: 200px 100px;
+    }
+    .pulse-blob-2 {
+      animation: pulseGlow 7s ease-in-out infinite reverse;
+      transform-origin: 1000px 300px;
+    }
+    .particle-1 { animation: floatParticle 5s ease-in-out infinite; }
+    .particle-2 { animation: floatParticle 7s ease-in-out infinite 1s; }
+    .particle-3 { animation: floatParticle 6s ease-in-out infinite 2s; }
+    .flow-node-1 { animation: nodeFloat1 4s ease-in-out infinite; }
+    .flow-node-2 { animation: nodeFloat2 5s ease-in-out infinite 1s; }
+  </style>
+
+  <!-- Deep Background -->
+  <rect width="1200" height="420" rx="20" fill="url(#bgGrad)" />
+  <rect width="1196" height="416" x="2" y="2" rx="18" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+
+  <!-- Dynamic Glowing Mesh Blobs (Background) -->
+  <g opacity="0.45">
+    <circle class="pulse-blob-1" cx="220" cy="90" r="140" fill="#38bdf8" filter="url(#glow)" opacity="0.3" />
+    <circle class="pulse-blob-2" cx="980" cy="310" r="170" fill="#818cf8" filter="url(#glow)" opacity="0.25" />
+    <circle cx="600" cy="210" r="110" fill="#c084fc" filter="url(#glow)" opacity="0.15" />
+  </g>
+
+  <!-- Dynamic Animated Circuit/Integration Flow Lines (Behind text) -->
+  <g opacity="0.55">
+    <!-- Top Pipeline -->
+    <path class="anim-dash" d="M 50 70 L 420 70 L 480 120 L 780 120 L 850 70 L 1150 70" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" />
+    <!-- Center Branch -->
+    <path class="anim-dash-fast" d="M 100 350 L 380 350 L 440 300 L 760 300 L 820 350 L 1100 350" fill="none" stroke="url(#lineGrad)" stroke-width="2" />
+    <!-- Connector Crossings -->
+    <line x1="280" y1="70" x2="280" y2="130" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4" />
+    <line x1="920" y1="290" x2="920" y2="350" stroke="#c084fc" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Animated Data Flow Packets / Particles -->
+  <g class="particle-1">
+    <circle cx="280" cy="70" r="5" fill="#38bdf8" filter="url(#softGlow)" />
+    <circle cx="920" cy="350" r="4.5" fill="#c084fc" filter="url(#softGlow)" />
+  </g>
+  <g class="particle-2">
+    <circle cx="620" cy="120" r="4" fill="#818cf8" filter="url(#softGlow)" />
+    <circle cx="560" cy="300" r="4" fill="#38bdf8" filter="url(#softGlow)" />
+  </g>
+  <g class="particle-3">
+    <circle cx="750" cy="70" r="3.5" fill="#38bdf8" />
+    <circle cx="340" cy="350" r="3.5" fill="#818cf8" />
+  </g>
+
+  <!-- Dynamic Floating Integration Pill Cards (Positioned lower, safely behind foreground titles) -->
+  <g class="flow-node-1" transform="translate(0, 0)">
+    <!-- SAP Adapter Pill -->
+    <g transform="translate(90, 260)">
+      <rect width="130" height="38" rx="19" fill="url(#cardGrad)" stroke="rgba(56,189,248,0.4)" stroke-width="1.2" />
+      <circle cx="22" cy="19" r="6" fill="#38bdf8" />
+      <text x="38" y="24" class="pill-text">SAP BAPI</text>
+    </g>
+    <!-- Workday Pill -->
+    <g transform="translate(980, 110)">
+      <rect width="135" height="38" rx="19" fill="url(#cardGrad)" stroke="rgba(192,132,252,0.4)" stroke-width="1.2" />
+      <circle cx="22" cy="19" r="6" fill="#c084fc" />
+      <text x="38" y="24" class="pill-text">Workday RaaS</text>
+    </g>
+  </g>
+
+  <g class="flow-node-2" transform="translate(0, 0)">
+    <!-- Salesforce Pill -->
+    <g transform="translate(85, 110)">
+      <rect width="155" height="38" rx="19" fill="url(#cardGrad)" stroke="rgba(129,140,248,0.4)" stroke-width="1.2" />
+      <circle cx="22" cy="19" r="6" fill="#818cf8" />
+      <text x="38" y="24" class="pill-text">Salesforce Sync</text>
+    </g>
+    <!-- NetSuite Pill -->
+    <g transform="translate(970, 260)">
+      <rect width="145" height="38" rx="19" fill="url(#cardGrad)" stroke="rgba(56,189,248,0.4)" stroke-width="1.2" />
+      <circle cx="22" cy="19" r="6" fill="#38bdf8" />
+      <text x="38" y="24" class="pill-text">NetSuite ERP</text>
+    </g>
+  </g>
+
+  <!-- FOREGROUND: Header Content (High z-index, crisp readability) -->
+  <g id="foreground-content">
+    <!-- Category Pill Badge -->
+    <g transform="translate(435, 62)">
+      <rect width="330" height="34" rx="17" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.45)" stroke-width="1.5" />
+      <circle cx="20" cy="17" r="5" fill="#38bdf8">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+      <text x="36" y="22" class="badge-text">ENTERPRISE ADAPTER ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="152" text-anchor="middle" class="title-text">
+      Awesome Pre-Built Adapters
+    </text>
+
+    <!-- Accent Title Underline / Glow Bar -->
+    <rect x="420" y="174" width="360" height="4" rx="2" fill="url(#accentGrad)" />
+
+    <!-- Subtitle -->
+    <text x="600" y="214" text-anchor="middle" class="subtitle-text">
+      The Curated Index of Enterprise Integration Connectors, iPaaS &amp; OSS Frameworks
+    </text>
+
+    <!-- Connector Badges Strip (Centered) -->
+    <g transform="translate(250, 240)">
+      <!-- SAP -->
+      <g transform="translate(0, 0)">
+        <rect width="105" height="30" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <text x="52" y="19" text-anchor="middle" class="pill-text" font-size="12">⚡ SAP ERP</text>
+      </g>
+      <!-- Salesforce -->
+      <g transform="translate(118, 0)">
+        <rect width="125" height="30" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <text x="62" y="19" text-anchor="middle" class="pill-text" font-size="12">☁️ Salesforce</text>
+      </g>
+      <!-- Workday -->
+      <g transform="translate(256, 0)">
+        <rect width="115" height="30" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <text x="57" y="19" text-anchor="middle" class="pill-text" font-size="12">👥 Workday</text>
+      </g>
+      <!-- NetSuite -->
+      <g transform="translate(384, 0)">
+        <rect width="115" height="30" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <text x="57" y="19" text-anchor="middle" class="pill-text" font-size="12">💼 NetSuite</text>
+      </g>
+      <!-- ServiceNow -->
+      <g transform="translate(512, 0)">
+        <rect width="135" height="30" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <text x="67" y="19" text-anchor="middle" class="pill-text" font-size="12">🛠️ ServiceNow</text>
+      </g>
+      <!-- Oracle -->
+      <g transform="translate(660, 0)">
+        <rect width="115" height="30" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <text x="57" y="19" text-anchor="middle" class="pill-text" font-size="12">🏛️ Oracle EBS</text>
+      </g>
+    </g>
+
+    <!-- Bottom Highlights / Stats Footnote -->
+    <text x="600" y="325" text-anchor="middle" class="code-text">
+      iPaaS Connectors • EIP Patterns • 1,000+ Pre-Built Adapters • Zero-Vendor-Lockin OSS
+    </text>
+  </g>
+</svg>
