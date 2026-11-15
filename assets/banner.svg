@@ -37,6 +37,7 @@
   </defs>
 
   <style>
+    <![CDATA[
     .title-text {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       font-weight: 800;
@@ -71,7 +72,7 @@
       fill: #38bdf8;
     }
 
-    /* Pulse & Float Animations */
+    /* Pulse and Float Animations */
     @keyframes pulseGlow {
       0%, 100% { opacity: 0.35; transform: scale(1); }
       50% { opacity: 0.75; transform: scale(1.08); }
@@ -114,6 +115,7 @@
     .particle-3 { animation: floatParticle 6s ease-in-out infinite 2s; }
     .flow-node-1 { animation: nodeFloat1 4s ease-in-out infinite; }
     .flow-node-2 { animation: nodeFloat2 5s ease-in-out infinite 1s; }
+    ]]>
   </style>
 
   <!-- Deep Background -->
